@@ -1,0 +1,8 @@
+KP NEXORA OWNER
+Name: Krishna Pandey
+Title: Founder & Owner
+Owner photo: static/images/krishna-pandey.png
+
+The owner identity is branding/profile information only; do not treat name matching as an authorization boundary.
+
+Google Sheets OAuth note: Google Cloud controls whether an account is allowed to authorize a testing app. Add the exact account under Google Auth Platform -> Audience -> Test users while the app is in Testing.

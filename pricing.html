@@ -1,0 +1,3 @@
+{% extends "base.html" %}
+{% block content %}<div class="center"><div class="eyebrow">PRICING</div><h1 class="h1">Choose your data journey.</h1><p class="sub" style="margin:auto">Transparent plans for teams moving from spreadsheets to intelligence.</p></div><div class="grid3" style="margin-top:25px">{% for n,p,f in [('Starter','₹0','CSV/Excel + basic analytics'),('Pro','₹2,499','AI, forecasts, reports, connectors'),('Enterprise','Custom','SSO, governance, private deployment')] %}<div class="card"><span class="pill">{{n}}</span><h2>{{p}}</h2><p class="muted">{{f}}</p><a class="btn primary" href="/contact">Get Started</a></div>{% endfor %}</div>
+{% endblock %}

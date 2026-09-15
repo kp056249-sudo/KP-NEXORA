@@ -1,0 +1,17 @@
+KP NEXORA — PUBLIC WEBSITE READY
+
+This package is prepared for public deployment.
+
+Architecture:
+Browser -> HTTPS -> Render Web Service -> Flask/Gunicorn -> PostgreSQL
+                                           |-> AI / Google Sheets (optional)
+
+The laptop is NOT required after deployment.
+
+You still need:
+1. A GitHub repository containing this project.
+2. A Render account to deploy it.
+3. A domain if you want a custom address such as kpnexora.com.
+4. Your own Groq and Google OAuth credentials for those optional services.
+
+Never put passwords, DATABASE_URL, Groq keys or Google client secrets into the repository.

@@ -1,0 +1,3 @@
+{% extends "base.html" %}
+{% block content %}<div class="page-head"><div><div class="eyebrow">DATA EXPLORER</div><h1 class="h1">Explore your rows.</h1><p class="sub">The latest imported dataset, first 100 rows.</p></div><a class="btn" href="/dashboard">Import another</a></div><div class="card table-wrap">{% if rows %}<table class="table"><thead><tr>{% for k in rows[0].keys() %}<th>{{k}}</th>{% endfor %}</tr></thead><tbody>{% for r in rows %}<tr>{% for v in r.values() %}<td>{{v}}</td>{% endfor %}</tr>{% endfor %}</tbody></table>{% else %}<div class="empty">No dataset loaded yet.</div>{% endif %}</div>
+{% endblock %}

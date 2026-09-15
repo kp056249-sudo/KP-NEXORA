@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KP NEXORA — {{mode|capitalize}}</title><link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"></head>
+<body class="nx-auth">
+<header class="nx-auth-nav"><a class="nx-logo" href="/"><span class="nx-logo-icon">N</span><span><b>KP NEXORA</b><small>DATA • AI • INTELLIGENCE</small></span></a><a href="/" class="nx-back">← Back to home</a></header>
+<div class="nx-auth-bg"><div class="nx-auth-orb"></div><div class="nx-auth-grid"></div></div>
+<main class="nx-auth-shell">
+  <section class="nx-auth-story"><div class="nx-kicker"><i></i> LEARN • ANALYZE • BUILD • GROW</div><h1>Your data.<br><span>Your future.</span></h1><p>One intelligent workspace for analytics, AI insights, forecasting and real business decisions.</p><div class="nx-auth-bullets"><div><b>✦</b><span><strong>AI-powered insights</strong><small>Ask questions in natural language.</small></span></div><div><b>◈</b><span><strong>Connect real data</strong><small>Sheets, PostgreSQL and file imports.</small></span></div><div><b>✓</b><span><strong>Built for action</strong><small>Reports and forecasts that explain the why.</small></span></div></div></section>
+  <section class="nx-auth-card">
+    <div class="nx-auth-heading"><div class="nx-mobile-mark">N</div><div class="nx-kicker">KP NEXORA WORKSPACE</div><h2>{{"Welcome back" if mode=="signin" else "Create your workspace"}}</h2><p>{{"Sign in to continue your data journey." if mode=="signin" else "Start turning your data into decisions."}}</p></div>
+    {% with messages=get_flashed_messages(with_categories=true) %}{% for c,m in messages %}<div class="nx-alert">{{m}}</div>{% endfor %}{% endwith %}
+    <a class="nx-google" href="{{ url_for('google_login_start', next=request.args.get('next','')) }}"><span class="g-letter">G</span><span>Continue with Google</span><b>→</b></a>
+    <div class="nx-divider"><span>or continue with email</span></div>
+    <form method="post" class="nx-form">{% if mode=="register" %}<label>Full name<input name="name" placeholder="Your name" autocomplete="name" required></label>{% endif %}<label>Email address<input name="email" type="email" placeholder="you@example.com" autocomplete="email" required></label><label>Password<input name="password" type="password" placeholder="Minimum 6 characters" autocomplete="{{'new-password' if mode=='register' else 'current-password'}}" required></label>{% if mode=="signin" %}<div class="nx-form-row"><label class="nx-check"><input type="checkbox" name="remember"><span>Remember me</span></label><span class="nx-muted">Secure session</span></div>{% endif %}<button class="nx-submit" type="submit">{{"Sign In" if mode=="signin" else "Create Account"}} <span>→</span></button></form>
+    <p class="nx-auth-switch">{% if mode=="signin" %}Don't have an account? <a href="/register">Create one</a>{% else %}Already have an account? <a href="/signin">Sign in</a>{% endif %}</p>
+    <p class="nx-setup-link"><a href="/setup-check">Google setup diagnostics</a> · Local OAuth uses HTTP only for development.</p>
+  </section>
+</main>
+</body></html>

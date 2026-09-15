@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="KP NEXORA — a modern AI-powered data intelligence workspace for analytics, forecasting and decisions.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#07111f">
+  <link rel="manifest" href="{{ url_for('manifest_webmanifest') }}">
+  <link rel="canonical" href="{{ request.url }}">
+  <meta property="og:title" content="KP NEXORA — Your Data. Your Future.">
+  <meta property="og:description" content="AI-powered analytics, dashboards, forecasts and reports in one workspace.">
+  <title>KP NEXORA — Your Data. Your Future.</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+<body class="nx-landing">
+<header class="nx-nav">
+  <a class="nx-logo" href="/" aria-label="KP NEXORA home">
+    <span class="nx-logo-icon">N</span><span><b>KP NEXORA</b><small>DATA • AI • INTELLIGENCE</small></span>
+  </a>
+  <nav class="nx-nav-links">
+    <a href="#platform">Platform</a><a href="#features">Features</a><a href="#workflow">How it works</a><a href="/pricing">Pricing</a><a href="/about">About</a>
+  </nav>
+  <div class="nx-nav-actions"><a class="nx-signin" href="/signin">Sign in</a><a class="nx-cta" href="/register">Get Started <span>→</span></a></div>
+</header>
+
+<main>
+<section class="nx-hero" id="platform">
+  <div class="nx-hero-copy">
+    <div class="nx-kicker"><i></i> AI-POWERED DATA INTELLIGENCE</div>
+    <h1>Your Data.<br><span>Your Future.</span></h1>
+    <p>Turn raw data into confident decisions with AI-powered analytics, interactive dashboards, forecasts and reports — all inside one beautiful workspace.</p>
+    <div class="nx-hero-actions"><a class="nx-cta nx-cta-large" href="/register">Start for free <span>↗</span></a><a class="nx-watch" href="#features"><span>▶</span> Explore platform</a></div>
+    <div class="nx-trust">
+      <div><strong>10K+</strong><small>Data workflows</small></div><b></b><div><strong>99.9%</strong><small>Workspace uptime</small></div><b></b><div><strong>50+</strong><small>Data possibilities</small></div>
+    </div>
+  </div>
+
+  <div class="nx-hero-visual" aria-label="KP NEXORA analytics preview">
+    <div class="nx-neural nx-neural-a"></div><div class="nx-neural nx-neural-b"></div><div class="nx-globe"><div class="nx-globe-grid"></div><span class="node n1"></span><span class="node n2"></span><span class="node n3"></span><span class="node n4"></span><span class="node n5"></span></div>
+    <div class="nx-float-card nx-revenue"><small>Total Revenue</small><strong>₹12,48,320</strong><em>↗ 12.3%</em><div class="spark"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+    <div class="nx-float-card nx-quality"><small>Data Quality</small><strong>96.4%</strong><div class="quality-ring"><span>Excellent</span></div></div>
+    <div class="nx-float-card nx-ai"><div class="nx-ai-icon">✦</div><div><small>AI INSIGHT</small><p>Sales momentum is rising. Your strongest signal is the latest period.</p></div><span>→</span></div>
+    <div class="nx-dashboard-card">
+      <div class="nx-dash-top"><span><i></i><i></i><i></i></span><b>KP NEXORA / ANALYTICS</b><em>● LIVE</em></div>
+      <div class="nx-dash-body"><div class="nx-dash-title"><div><small>PERFORMANCE OVERVIEW</small><h3>Business Intelligence</h3></div><span>AI READY</span></div>
+        <div class="nx-mini-stats"><div><small>Revenue</small><b>₹24.8L</b><em>+18.6%</em></div><div><small>Customers</small><b>5,231</b><em>+7.2%</em></div><div><small>Forecast</small><b>+12.2%</b><em>Next period</em></div></div>
+        <div class="nx-chart"><div class="grid-lines"></div><svg viewBox="0 0 620 190" preserveAspectRatio="none"><defs><linearGradient id="nxFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#20c9ff" stop-opacity=".35"/><stop offset="1" stop-color="#7d2cff" stop-opacity="0"/></linearGradient></defs><path d="M0 150 C55 142 75 125 115 130 S175 92 215 112 S280 70 320 91 S380 52 420 70 S485 42 525 55 S570 35 620 45 L620 190 L0 190Z" fill="url(#nxFill)"/><path d="M0 150 C55 142 75 125 115 130 S175 92 215 112 S280 70 320 91 S380 52 420 70 S485 42 525 55 S570 35 620 45" fill="none" stroke="#29c8ff" stroke-width="3"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="nx-section" id="features">
+  <div class="nx-section-head"><div><div class="nx-kicker">ONE INTELLIGENT WORKSPACE</div><h2>Everything your data<br><span>needs to become useful.</span></h2></div><p>From your first upload to your final report, KP NEXORA brings the whole data journey together.</p></div>
+  <div class="nx-feature-grid">
+    <article><div class="nx-feature-icon">✦</div><small>01 / AI</small><h3>AI Data Analyst</h3><p>Ask natural-language questions and get practical, dataset-aware answers.</p><a href="/ai-analyst">Explore AI →</a></article>
+    <article><div class="nx-feature-icon">▥</div><small>02 / ANALYTICS</small><h3>Live Analytics</h3><p>Quality, statistics, trends and correlations appear automatically after import.</p><a href="/register">Explore analytics →</a></article>
+    <article><div class="nx-feature-icon">↗</div><small>03 / FORECAST</small><h3>Predict what is next</h3><p>Understand direction and momentum with transparent trend-based forecasting.</p><a href="/register">View forecasting →</a></article>
+    <article><div class="nx-feature-icon">◈</div><small>04 / CONNECT</small><h3>Your data, your sources</h3><p>CSV, Excel, JSON, PostgreSQL and Google Sheets in one workflow.</p><a href="/data-sources">Connect a source →</a></article>
+  </div>
+</section>
+
+<section class="nx-workflow" id="workflow"><div class="nx-workflow-copy"><div class="nx-kicker">FROM DATA TO DECISION</div><h2>Simple enough to start.<br><span>Powerful enough to grow.</span></h2><p>Bring the data you already have. KP NEXORA handles the repetitive analysis so you can focus on what the numbers mean.</p><a class="nx-cta" href="/register">Build your workspace →</a></div><div class="nx-steps"><div><b>01</b><section><h3>Connect</h3><p>Upload a file or connect a supported source.</p></section></div><div><b>02</b><section><h3>Understand</h3><p>See quality, patterns, relationships and trends.</p></section></div><div><b>03</b><section><h3>Ask AI</h3><p>Turn your dataset into useful questions and answers.</p></section></div><div><b>04</b><section><h3>Act</h3><p>Build reports and make decisions with confidence.</p></section></div></div></section>
+
+<section class="nx-cta-band"><div><div class="nx-kicker">READY TO BUILD?</div><h2>Make your data work smarter.</h2><p>Create your workspace and start exploring in minutes.</p></div><a class="nx-cta nx-cta-large" href="/register">Get Started Free →</a></section>
+</main>
+<footer class="nx-footer"><div><b>KP NEXORA</b><span>Smarter Data. Brighter Future.</span><small>{{ owner_title }}: {{ owner_name }}</small></div><div><a href="/help">Help</a><a href="/contact">Contact</a><a href="/pricing">Pricing</a></div><small>© {{ year }} KP NEXORA</small></footer>
+</body></html>

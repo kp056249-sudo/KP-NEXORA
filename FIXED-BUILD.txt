@@ -1,0 +1,6 @@
+KP NEXORA ULTIMATE FIXED
+Build: 2026-09-15
+Core checks: py_compile PASS; JS syntax PASS; project verifier PASS
+Google OAuth: credential fallback + diagnostics added
+AI: Groq error handling + configuration checks
+Home: redesigned landing page

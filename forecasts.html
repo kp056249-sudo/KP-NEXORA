@@ -1,0 +1,3 @@
+{% extends "base.html" %}
+{% block content %}<div class="page-head"><div><div class="eyebrow">FORECASTS</div><h1 class="h1">Plan with a trend.</h1><p class="sub">A transparent linear projection based on the first numeric field of your latest dataset.</p></div></div><div class="card"><div class="section-title"><h2>5-Step Forecast</h2><span class="pill">Deterministic</span></div>{% if analysis.forecast %}<div class="grid3">{% for x in analysis.forecast %}<div class="card"><small class="muted">Step {{loop.index}}</small><div class="num">{{x}}</div></div>{% endfor %}</div>{% else %}<div class="empty">Forecast needs at least 3 valid numeric values. Upload a dataset from Dashboard.</div>{% endif %}</div>
+{% endblock %}

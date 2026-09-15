@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-head"><div><div class="eyebrow">ADVANCED AI ANALYST</div><h1 class="h1">Ask anything.</h1><p class="sub">General AI + your latest dataset, powered by Groq Free Tier. Current web search is not enabled in the free setup.</p><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><div id="aiConnectionStatus" class="pill">Checking Advanced AI connection…</div><button id="aiTestButton" class="btn secondary" type="button">Run AI connection test</button></div><p id="aiConnectionDetail" class="muted" style="margin-top:8px"></p></div></div>
+<div class="grid2">
+  <div class="card">
+    <form id="aiForm">
+      <textarea id="aiQuestion" class="input" rows="7" placeholder="Ask anything — e.g. What are the biggest risks in my dataset? Or: What are today's major business news stories?"></textarea>
+      <button class="btn primary" style="margin-top:10px">Ask Advanced AI →</button>
+    </form>
+    <div id="aiAnswer" class="card" style="margin-top:14px;background:#06142b">Ready. Ask a question.</div>
+    <div id="aiSources" class="card" style="margin-top:14px;background:#06142b;display:none"></div>
+  </div>
+  <div class="card">
+    <div class="section-title"><h2>Advanced capabilities</h2></div>
+    <div class="list">
+      <div>✦ <b>General AI</b><small class="muted"> Answer general knowledge, business, writing and reasoning questions.</small></div>
+      <div>🌐 <b>Current Web</b><small class="muted"> Free mode does not pretend to have live web access; current-data questions are clearly marked.</small></div>
+      <div>📊 <b>Dataset Intelligence</b><small class="muted"> Use your uploaded data for trends, correlations, forecasts and insights.</small></div>
+      <div>⌕ <b>Smart Analysis</b><small class="muted"> Uses your dataset evidence when a question is about your data.</small></div>
+      <div>✓ <b>Evidence-first</b><small class="muted"> Avoid invented dataset values and clearly state uncertainty.</small></div>
+    </div>
+  </div>
+</div>
+{% endblock %}

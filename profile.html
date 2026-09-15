@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-head"><div><div class="eyebrow">PROFILE & OWNERSHIP</div><h1 class="h1">Your Profile</h1><p class="sub">Your KP NEXORA identity, workspace role and account details.</p></div></div>
+<div class="grid2 owner-profile-grid">
+  <div class="card owner-card">
+    <div class="owner-photo-wrap"><img class="owner-photo" src="{{ owner_photo }}" alt="Krishna Pandey — KP NEXORA Founder & Owner"></div>
+    <div class="eyebrow" style="margin-top:16px">KP NEXORA OWNER</div>
+    <h2>{{ owner_name }}</h2><p class="muted">{{ owner_title }} · KP NEXORA</p>
+    {% if user['name'] == owner_name %}<span class="pill owner-pill">Founder & Owner</span>{% else %}<span class="pill">WORKSPACE MEMBER</span>{% endif %}
+    <div class="owner-note">The owner branding is configured locally. Account permissions are still controlled by your login and workspace.</div>
+  </div>
+  <div class="card"><div class="section-title"><h2>Account details</h2><span class="pill">Secure</span></div><form class="form" method="post"><label>Name<input class="input" name="name" value="{{user['name']}}"></label><label>Email<input class="input" value="{{user['email']}}" disabled></label><label>Job Title<input class="input" name="job_title" value="{{user['job_title']}}"></label><button type="submit" class="btn primary">Save Changes</button></form></div>
+</div>
+{% endblock %}

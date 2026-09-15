@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-head"><div><div class="eyebrow">GOOGLE OAUTH SETUP</div><h1 class="h1">Fix Google access</h1><p class="sub">If Google shows “Access blocked”, the Google Cloud OAuth audience is blocking the account. The app cannot bypass Google's authorization rules.</p></div></div>
+<div class="grid2">
+  <div class="card">
+    <h2>1. Add your Google account as a Test user</h2>
+    <p class="muted">Open Google Cloud Console → Google Auth Platform → Audience → Test users → Add users. Add the exact Gmail/Google Workspace account you are using to sign in or connect Sheets.</p>
+    <p><b>Important:</b> Keep the OAuth app in <b>Testing</b> while you are developing. Google documents that testing apps are limited to accounts listed as test users.</p>
+    <a class="btn primary" href="https://console.cloud.google.com/auth/audience" target="_blank" rel="noopener">Open Google OAuth Audience</a>
+  </div>
+  <div class="card">
+    <h2>2. Authorized redirect URIs</h2>
+    <p class="muted">In the same Web application OAuth client, put these under <b>Authorized redirect URIs</b>:</p>
+    <div class="card" style="margin:10px 0"><code>{{ login_callback }}</code></div>
+    <div class="card"><code>{{ sheets_callback }}</code></div>
+    <p class="muted">Do not put these in Authorized JavaScript origins for this server-side local setup.</p>
+  </div>
+</div>
+<div class="card" style="margin-top:15px">
+  <h2>3. Current app configuration</h2>
+  <p>Client ID present: <b>{{ "Yes" if client_id_present else "No" }}</b></p>
+  <p>Client ID format: <b>{{ "Valid Web client format" if client_id_format else "Not detected" }}</b></p>
+  <p>Site owner: <b>{{ owner_name }}</b> · {{ owner_title }}</p>
+  <p class="muted">For a public production app, Google may require OAuth verification for sensitive scopes. Google lists <code>spreadsheets.readonly</code> as a sensitive scope.</p>
+</div>
+{% endblock %}

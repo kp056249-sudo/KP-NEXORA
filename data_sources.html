@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-head"><div><div class="eyebrow">DATA INFRASTRUCTURE</div><h1 class="h1">Data Sources & Integrations</h1><p class="sub">Connect real sources and import them into the same analytics engine.</p></div></div>
+<div class="grid2">
+  <div class="card">
+    <div class="section-title"><h2>Google Sheets</h2><span class="pill">Public + Secure OAuth</span></div>
+    <p class="muted">Public import uses Google’s published-to-web CSV endpoint and does not need OAuth. Private sheets use your connected Google account.</p>
+    <a class="btn secondary" href="{{ url_for('google_oauth_start') }}">Connect Google Account</a><div class="card" style="margin-top:12px;background:rgba(20,30,70,.35)"><b>⚠ If Google says “Access blocked”</b><p class="muted" style="margin:7px 0">If Google says <b>Access blocked</b>, add the EXACT Google account you are using under <b>Google Cloud → Google Auth Platform → Audience → Test users</b>. Also make sure the Sheets API is enabled and the Web OAuth client contains the exact callback shown in the setup guide. This is controlled by Google Cloud, so the app cannot bypass a blocked account.</p><a class="btn" href="/oauth/setup" target="_blank" rel="noopener">Open Google setup guide</a></div>
+    <form id="googleForm" class="form" style="margin-top:12px"><input class="input" name="sheet_url" placeholder="Paste the full Publish to web URL (/pub or /pubhtml)" required><button class="btn green">Import Public Sheet</button></form>
+    <form id="googlePrivateForm" class="form" style="margin-top:10px"><input class="input" name="sheet_url" placeholder="Private Google Sheet URL"><button class="btn primary">Import Private Sheet</button></form>
+  </div>
+  <div class="card">
+    <div class="section-title"><h2>PostgreSQL</h2><span class="pill">Read-only</span></div>
+    <p class="muted">Use a PostgreSQL connection URL and one SELECT/WITH query. The connector does not save the supplied connection URL.</p>
+    <form id="postgresForm" class="form"><input class="input" name="connection_url" type="password" placeholder="postgresql://user:password@host:5432/db" required><textarea class="input" name="query" rows="4">SELECT * FROM your_table LIMIT 1000</textarea><div style="display:flex;gap:8px;flex-wrap:wrap"><button type="button" id="postgresTestBtn" class="btn secondary">Test Connection</button><button class="btn primary">Connect PostgreSQL</button></div></form>
+  </div>
+</div>
+<div class="card" style="margin-top:15px"><div class="section-title"><h2>Testing Resources</h2></div><div class="grid3"><div><b>Google Sheets Test</b><p class="muted">test_data/google_sheets_test.md</p></div><div><b>PostgreSQL Test</b><p class="muted">test_data/postgresql_test.sql</p></div><div><b>Sample Dataset</b><p class="muted">sample_data/demo_sales.csv</p></div></div></div>
+{% endblock %}

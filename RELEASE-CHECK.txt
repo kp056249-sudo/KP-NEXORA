@@ -1,0 +1,21 @@
+KP NEXORA FINAL RELEASE CHECK
+
+Provider: Groq Free Tier
+Default model: openai/gpt-oss-120b
+API secret variable: GROQ_API_KEY
+Live web search: disabled in free configuration
+
+Verified before packaging:
+- app.py Python syntax: PASS
+- static/js/app.js syntax: PASS
+- project verification script: PASS
+- required routes: PASS (32 routes found)
+- HTML templates checked by verification script: PASS (21 templates)
+- Render Blueprint checks: PASS
+- PostgreSQL application database mode: PASS
+- Google Sheets public + OAuth routes: PASS
+- persistent dataset bytes in database: PASS
+- .env excluded by .gitignore
+- no OpenAI API dependency required by this release
+
+Important: the final API call requires the user's own GROQ_API_KEY and an internet connection on the machine/server.

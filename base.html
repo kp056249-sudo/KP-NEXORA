@@ -1,0 +1,21 @@
+
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="KP NEXORA — AI-powered data analytics, forecasting, dashboards and reports."><meta name="robots" content="index,follow"><meta name="theme-color" content="#07111f"><link rel="manifest" href="{{ url_for('manifest_webmanifest') }}"><link rel="canonical" href="{{ request.url }}"><title>KP NEXORA — Smarter Data. Brighter Future.</title><link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}"></head>
+<body><header class="top"><a class="brand" href="/"><div class="logo">✦</div><div><strong>KP NEXORA</strong><small>Smarter Data. Brighter Future.</small></div></a><div class="search">⌕<input id="globalSearch" autocomplete="off" placeholder="Search pages... (datasets, analysis, reports, etc.)"><span class="kbd">Ctrl + K</span></div><div class="top-actions"><button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle theme">☼</button>{% if user %}<a href="/notifications" class="icon-btn">♧</a><a href="/profile" class="account"><div class="avatar">{{ user['name'][0]|upper }}</div><div>{{ user['name'] }}<span>Pro Member</span></div></a><a class="icon-btn" href="/logout">↪</a>{% else %}<a class="btn" href="/signin">Sign In</a><a class="btn primary" href="/register">Get Started →</a>{% endif %}</div></header>
+<div class="layout"><aside class="side"><nav class="nav"><div class="nav-title">WORKSPACE</div><a class="{% if active=="home" %}active{% endif %}" href="/"><b>⌂</b><span>Home</span></a>
+<a class="{% if active=="dashboard" %}active{% endif %}" href="/dashboard"><b>▦</b><span>Dashboard</span></a>
+<a class="{% if active=="analytics" %}active{% endif %}" href="/analytics"><b>▦</b><span>Analytics</span></a>
+<a class="{% if active=="ai" %}active{% endif %}" href="/ai-analyst"><b>✦</b><span>AI Analyst</span></a>
+<a class="{% if active=="sources" %}active{% endif %}" href="/data-sources"><b>◈</b><span>Data Sources</span></a>
+<a class="{% if active=="explorer" %}active{% endif %}" href="/data-explorer"><b>⌕</b><span>Data Explorer</span></a>
+<a class="{% if active=="forecasts" %}active{% endif %}" href="/forecasts"><b>↗</b><span>Forecasts</span></a>
+<a class="{% if active=="reports" %}active{% endif %}" href="/reports"><b>▤</b><span>Reports</span></a>
+<a class="{% if active=="team" %}active{% endif %}" href="/team"><b>♧</b><span>Team & Workspace</span></a>
+<a class="{% if active=="activity" %}active{% endif %}" href="/activity"><b>◷</b><span>Activity</span></a>
+<a class="{% if active=="notifications" %}active{% endif %}" href="/notifications"><b>♧</b><span>Notifications</span>{% if unread_notifications %}<em class="badge">{{unread_notifications}}</em>{% endif %}</a>
+<a class="{% if active=="billing" %}active{% endif %}" href="/billing"><b>$</b><span>Billing & Subscription</span></a>
+<a class="{% if active=="profile" %}active{% endif %}" href="/profile"><b>◎</b><span>Profile Settings</span></a>
+<a class="{% if active=="settings" %}active{% endif %}" href="/workspace-settings"><b>◎</b><span>Workspace Settings</span></a>
+<a class="{% if active=="help" %}active{% endif %}" href="/help"><b>?</b><span>Help & Support</span></a>
+<a class="{% if active=="about" %}active{% endif %}" href="/about"><b>?</b><span>About</span></a>
+<a class="{% if active=="pricing" %}active{% endif %}" href="/pricing"><b>◆</b><span>Pricing</span></a>
+<a class="{% if active=="contact" %}active{% endif %}" href="/contact"><b>✉</b><span>Contact</span></a><div class="upgrade"><b>👑 Upgrade to Pro</b><p>Get advanced analytics, more AI credits, and premium features.</p><a class="btn primary" href="/pricing">Upgrade Now</a></div></nav></aside><main class="main">{% with messages=get_flashed_messages(with_categories=true) %}{% for cat,msg in messages %}<div class="flash">{{msg}}</div>{% endfor %}{% endwith %}{% block content %}{% endblock %}</main></div><footer class="footer"><span>KP NEXORA v1.0.0</span><span>Smarter Data • Deeper Insights • Bigger Possibilities</span><span>● Workspace Ready</span></footer><script src="{{url_for('static',filename='js/app.js')}}"></script></body></html>
